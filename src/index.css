@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .header-links {
+    @apply relative text-header-link-color mx-4 font-semibold  
+         h-full flex items-center  after:absolute after:content-[''] 
+         after:w-full after:bottom-0 after:left-0 after:h-0 
+         after:bg-header-link-after-color after:transition-all after:duration-200  hover:after:h-1;
+  }
+}

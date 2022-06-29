@@ -14,14 +14,14 @@ const App : FC = () => {
     setSelectedLanguage(selectedLanguage==="tr" ? "en" : "tr")
     lang === langs.tr ? setLang(langs.en) : setLang(langs.tr)
   }
-
+  
 
   return (
     <Context.Provider value={lang}  >
        <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="*" element={<p>Lorem ipsum dolor sit amet.</p>} />
+       {/*    <Route path="*" element={<Deneme/>} /> */}
         </Routes>
       </Router> 
     </Context.Provider>

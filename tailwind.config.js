@@ -6,11 +6,15 @@ module.exports = {
     extend: {
 
       colors : {
-        "headerBg" : "#2A2A2A"
+        "header-bg" : "#2A2A2A",
+        "header-link-color" : "#ADADAD",
+        "header-link-after-color" : "#0078F2",
+        "main-bg-color" : "#121212"
      }
     },
           
   
   },
   plugins: [],
+  
 }
