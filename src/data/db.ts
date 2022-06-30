@@ -1,4 +1,4 @@
-interface IdbMovie {
+interface IdbGame {
    Id : number,
    Categories : Array<string>
    Name : string,
@@ -9,9 +9,9 @@ interface IdbMovie {
    Screenshots : Array<string>,
    Price: number
 }
+export type {IdbGame}
 
-
-export const dbMovie:Array<IdbMovie>=[
+export const dbGame:Array<IdbGame>=[
     {
       "Id": 10039,
       "Categories": ["Fighting", "Shooter", "Platform", "Indie"],

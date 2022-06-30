@@ -2,6 +2,7 @@ import React, {createContext,useState ,FC} from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home  } from "components";
 import {langs,TlangProps} from "data"
+import Markets from "pages/Markets";
 
 
 export const Context: any = createContext("");
@@ -21,7 +22,7 @@ const App : FC = () => {
        <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-       {/*    <Route path="*" element={<Deneme/>} /> */}
+          <Route path="/markets" element={<Markets/>} /> 
         </Routes>
       </Router> 
     </Context.Provider>

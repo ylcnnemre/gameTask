@@ -1,2 +1,8 @@
 export {Home}  from "./Home"
 export {Header} from "./Header"
+export {TrendGameCard} from "./TrendGameCard"
+export {NavMenu} from "./NavMenu"
+export{SwiperItem} from "./SwiperItem"
+export {Trends} from "./Trends"
+export {DiscountGames} from "./DiscountGames"
+export {SwiperCard} from "./SwiperCard"

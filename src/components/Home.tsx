@@ -1,31 +1,20 @@
-import { useState,useContext } from 'react'
-import {langs} from "data"
-import { Context } from 'App'
-import {Header} from 'components'
-import { DownOutlined, SmileOutlined } from "@ant-design/icons";
-import { Dropdown, Menu, Space } from "antd";
-import NavMenu from './NavMenu';
-import Carousel from './Carousel';
-
-
+import { useState, useContext } from "react";
+import { langs } from "data";
+import { Context } from "App";
+import { Header, NavMenu, Trends, DiscountGames } from "components";
+import MainLayout from "./MainLayout";
 
 const Home = () => {
- 
-  const ContextData=useContext(Context)
+  const ContextData = useContext(Context);
 
   return (
-    <div className='flex flex-col'>
-            <Header/>
-            <div className='bg-main-bg-color    '>
-                <div className='w-3/4 mx-auto'>
-                    <NavMenu/>
-                    <Carousel/>
-                </div>
-            </div>
-    </div>
+    <MainLayout>
+      <NavMenu />
+      <Trends />
+      <DiscountGames />
+    </MainLayout>
+  );
+};
 
-  )
-}
-
-export default Home
-export {Home}
+export default Home;
+export { Home };

@@ -54,35 +54,54 @@ const NavMenu = () => {
   };
 
   return (
-    <div className="flex py-8 items-center">
-      <div className="text-white bg-header-bg w-[200px] flex items-center rounded-3xl px-4 ">
-        <AiOutlineSearch color="white" size={"30"} />
-        <AutoComplete
-          dropdownMatchSelectWidth={252}
-          style={{ width: 300 }}
-          options={options}
-          onSelect={onSelect}
-          onSearch={handleSearch}
-          bordered={false}
-        >
-          <Input
-            placeholder="search"
+    <div className="flex py-8 items-center justify-between pr-6  flex-row-reverse ">
+      <div className="flex items-center flex-row-reverse">
+        <div className="text-white bg-header-bg w-[200px] flex items-center rounded-3xl px-4 ">
+          <AiOutlineSearch color="white" size={"30"} />
+          <AutoComplete
+            dropdownMatchSelectWidth={252}
+            style={{ width: 300 }}
+            options={options}
+            onSelect={onSelect}
+            onSearch={handleSearch}
             bordered={false}
-            className="py-2 text-white"
-          />
-        </AutoComplete>
-      </div>
-      <Link to={"/home"} className="text-header-link-color hover:text-white mx-5">
+          >
+            <Input
+              placeholder="search"
+              bordered={false}
+              className="py-2 text-white"
+            />
+          </AutoComplete>
+        </div>
+
+        <div>
+          <Link
+            to={"/home"}
+            className="text-header-link-color hover:text-white mx-5"
+          >
             Keşfet
-      </Link>
-      <Link to={"/home"} className="text-header-link-color hover:text-white mx-5">
+          </Link>
+          <Link
+            to={"/home"}
+            className="text-header-link-color hover:text-white mx-5"
+          >
             Göz At
-      </Link>
-      <Link to={"/home"} className="text-header-link-color hover:text-white mx-5">
+          </Link>
+          <Link
+            to={"/home"}
+            className="text-header-link-color hover:text-white mx-5"
+          >
             Haberler
-      </Link>
+          </Link>
+        </div>
+      </div>
+
+      <p className="text-header-link-color text-lg  bg-slate-600 px-4 rounded-lg ">Trends</p>
     </div>
   );
 };
 
 export default NavMenu;
+export {
+  NavMenu
+}
