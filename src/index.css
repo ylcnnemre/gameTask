@@ -9,4 +9,12 @@
          after:w-full after:bottom-0 after:left-0 after:h-0 
          after:bg-header-link-after-color after:transition-all after:duration-200  hover:after:h-1;
   }
+  .line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
 }
+
+
