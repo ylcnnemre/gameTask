@@ -6,6 +6,7 @@ import Markets from "pages/Markets";
 import Login from "pages/Login";
 import 'react-toastify/dist/ReactToastify.css';
 import Register from "pages/Register";
+import Test from "pages/Test";
 
 export const Context: any = createContext("");
 
@@ -31,6 +32,7 @@ const App : FC = () => {
           <Route path="/markets" element={<Markets/>} /> 
           <Route path="/login" element={auth ? <Navigate to={"/markets"} replace /> : <Login />   }  />
           <Route path="/register"  element={<Register/>}  />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </Router> 
     </Context.Provider>

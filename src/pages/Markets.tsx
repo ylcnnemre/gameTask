@@ -6,6 +6,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import FilterMenu from "components/Markets/FilterMenu";
 import { SwiperCard } from "components";
 import GameCard from "components/Markets/GameCard";
+import GalleryModal from "components/Markets/GalleryModal";
 const Markets = () => {
   const { Option } = Select;
   const [games,setGames]=useState<Array<IdbGame> | null>()
