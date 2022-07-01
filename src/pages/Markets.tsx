@@ -8,18 +8,8 @@ import { SwiperCard } from "components";
 import GameCard from "components/Markets/GameCard";
 const Markets = () => {
   const { Option } = Select;
-  const [games,setGames]=useState<Array<IdbGame>>([])
+  const [games,setGames]=useState<Array<IdbGame>>([...dbGame])
 
-
-  useEffect(() => {
-    setGames([
-      ...dbGame
-    ])
-
-   
-
-
-  }, []);
   return (
     <MainLayout>
       <div className="flex flex-col">
@@ -32,10 +22,6 @@ const Markets = () => {
                 )
             })
            }
-
-          {/*     <img src={dbGame[0].Cover} alt="" className="w-[250px]" />
-                <img src={dbGame[0].Cover} alt="" className="w-[250px]" />
-                <img src={dbGame[0].Cover} alt="" className="w-[250px]" /> */}
         </div>
       </div>
     </MainLayout>
