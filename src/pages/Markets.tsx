@@ -8,19 +8,25 @@ import { SwiperCard } from "components";
 import GameCard from "components/Markets/GameCard";
 const Markets = () => {
   const { Option } = Select;
-  const [games,setGames]=useState<Array<IdbGame>>([...dbGame])
+  const [games,setGames]=useState<Array<IdbGame> | null>()
+
+  useEffect(()=>{
+     setGames([...dbGame])
+  },[])
+
 
   return (
     <MainLayout>
       <div className="flex flex-col">
-        <FilterMenu  setGames={setGames}  games={games} />
+         {games!=null  &&  <FilterMenu  setGames={setGames}  games={games} />    }  
         <div className="w-full grid grid-cols-4 gap-6 ">
            {
-            games.map((el,i)=>{
-                return (
-                    <GameCard gameData={el}  />
-                )
-            })
+            games!==null && games?.map((el,i)=>{
+              return (
+                  <GameCard gameData={el}  />
+              )
+          }) 
+            
            }
         </div>
       </div>

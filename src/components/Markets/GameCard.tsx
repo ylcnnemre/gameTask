@@ -3,6 +3,8 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { FaHeart } from "react-icons/fa";
 const GameCard = ({ gameData ,games }: any) => {
+
+
   return (
     <div className="flex flex-col bg-header-bg p-3 rounded-lg">
       <div className="flex">
@@ -22,7 +24,9 @@ const GameCard = ({ gameData ,games }: any) => {
 
       <p className="text-white text-sm flex-1   line-clamp my-2">{gameData.Summary}</p>
       <div className="flex   w-full justify-between items-end mt-3">
-        <p className="bg-slate-700 px-2 py-2 rounded-md text-white">01/02/18</p>
+        <p className="bg-slate-700 px-2 py-2 rounded-md text-white text-sm  ">
+            { new Date(gameData.ReleaseDate).toISOString().split("T")[0].split("-").join("/") }
+        </p>
         <p className="flex items-center text-xl text-white h-full  justify-center">
           <FaHeart className="mr-2 text-red-600 text-md" />
           {gameData.Likes}
