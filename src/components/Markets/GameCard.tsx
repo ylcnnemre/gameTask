@@ -1,6 +1,8 @@
+import { Button } from "antd";
 import React from "react";
-import {FaHeart} from "react-icons/fa"
-const GameCard = ({ gameData }: any) => {
+import { BiSearch } from "react-icons/bi";
+import { FaHeart } from "react-icons/fa";
+const GameCard = ({ gameData ,games }: any) => {
   return (
     <div className="flex flex-col bg-header-bg p-3 rounded-lg">
       <div className="flex">
@@ -9,23 +11,29 @@ const GameCard = ({ gameData }: any) => {
         </p>
       </div>
 
-      <img src={gameData.Cover} alt="" className="w-full rounded-lg" />
-
-    {/*   <p className="text-white text-sm  line-clamp">{gameData.Summary}</p> */}
-      <div className="flex w-full justify-between items-center mt-3">
-         <p className="bg-slate-700 px-2 py-2 rounded-md text-white">
-            01/02/18
-         </p>
-         <p className="flex items-center text-xl text-white">
-            <FaHeart className="mr-1 text-red-600 text-md"  />
-            {gameData.Likes}
-         </p>
-         <p className="bg-slate-700 px-3 py-2 rounded-md text-white">
-            {
-                gameData.Price
-            }$
-         </p>
+      <div className="relative hover:opacity-70 transition-all">
+        <img
+          src={gameData.Cover}
+          alt=""
+          className="w-full rounded-lg relative  "
+        />
+        <BiSearch className="absolute top-1/2 left-1/2 text-white  text-2xl opacity-0 -translate-x-1/2 -translate-y-1/2" />
       </div>
+
+      <p className="text-white text-sm flex-1   line-clamp my-2">{gameData.Summary}</p>
+      <div className="flex   w-full justify-between items-end mt-3">
+        <p className="bg-slate-700 px-2 py-2 rounded-md text-white">01/02/18</p>
+        <p className="flex items-center text-xl text-white h-full  justify-center">
+          <FaHeart className="mr-2 text-red-600 text-md" />
+          {gameData.Likes}
+        </p>
+        <p className="bg-slate-700 px-3 py-2 rounded-md text-white">
+          {gameData.Price}$
+        </p>
+      </div>
+      <Button className="rounded-lg text-white mt-4">
+        Satın al
+      </Button>
     </div>
   );
 };

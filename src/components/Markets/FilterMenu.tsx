@@ -1,11 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import { AiOutlineSearch } from "react-icons/ai";
-import { dbGame } from 'data';
+import { dbGame, IdbGame } from 'data';
 import { Input, Menu, Dropdown, Space, Select } from "antd";
-const FilterMenu = () => {
-    const { Option } = Select;
-    const categoriesArr : Array<any> =[]
+const FilterMenu = ({setGames,games}:any) => {
+  
+  const { Option } = Select;
+  const categoriesArr : Array<any> =[]
   const [categories,setCategories]=useState<Array<string>>([])
+  const [tempGames,setTempGames]=useState<Array<any>>([])
   const CategoryFilter=()=>{
     
      dbGame.forEach((val,i) =>{
@@ -16,8 +18,24 @@ const FilterMenu = () => {
         ...Array.from(new Set(categoriesArr))
      ])
   }
+
+
+ const filterByName=(val:string) =>{
+   const filteredGames:any=tempGames.filter((e:any,i:number)=>e.Name.toLowerCase().search(val.toLowerCase())!=-1 )
+
+   setGames([...filteredGames])
+ }      
+
+
+
+
   useEffect(()=>{
+    console.log("games => ",games)
     CategoryFilter()
+    setTempGames([
+        ...games
+    ])
+ 
   },[])
   return (
     <div className="flex items-center justify-between">
@@ -27,6 +45,7 @@ const FilterMenu = () => {
               placeholder="search"
               bordered={false}
               className="py-2 text-white"
+              onChange={({target:{value}}) => filterByName(value)}
             />
           </div>
           <Select defaultValue={"all"} className="w-[150px] text-black  rounded-3xl bg-white  " bordered={false}  >
