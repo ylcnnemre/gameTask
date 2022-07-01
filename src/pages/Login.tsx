@@ -27,7 +27,7 @@ const Login = () => {
   const setEmail = (mail: string): void => {
     var re = /\S+@\S+\.\S+/;
 
-    if (re.test(mail)) {
+    if (re.test(mail) ) {
       setLoginInfo({
         ...loginInfo,
         email: mail,
@@ -49,28 +49,47 @@ const Login = () => {
   };
 
   const setPassword = (password: string): void => {
-    setLoginValidation({
-      ...loginValidation,
-      password: true,
-    });
     setLoginInfo({
         ...loginInfo,
         password : password
     })
+    if(password!=="")
+    {
+        setLoginValidation({
+            ...loginValidation,
+            password: true,
+          });
+         
+    }
+    else{
+        setLoginValidation({
+            ...loginValidation,
+            password: false,
+          });
+    }
   };
 
 
  const confirmLogin=() :void =>{
 
+    let veri : any= localStorage.getItem("user")
 
-    if(loginInfo.email=="root@gmail.com" && loginInfo.password=="1234")
+    if(veri!==null)
     {
-        /* toast.error("Wrong passwoord or email",{
-            
-        }) */
-        setAauth(true)
-      /*   router("/") */
+         const StorageLoginInfo : {email:string,password:string}  =JSON.parse(veri)  
+         
+         if(loginInfo.email==StorageLoginInfo.email && loginInfo.password==StorageLoginInfo.password)
+         {
+            setAauth(true)
+         }
+         else{
+            toast.error("Wrong passwoord or email")
+         }
     }
+    else {
+        toast.error("Wrong passwoord or email")
+    }
+
  }
 
 

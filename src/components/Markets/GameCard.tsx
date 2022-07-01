@@ -13,13 +13,13 @@ const GameCard = ({ gameData ,games }: any) => {
         </p>
       </div>
 
-      <div className="relative hover:opacity-70 transition-all">
+      <div className="relative hover:opacity-80 transition-all group">
         <img
           src={gameData.Cover}
           alt=""
           className="w-full rounded-lg relative  "
         />
-        <BiSearch className="absolute top-1/2 left-1/2 text-white  text-2xl opacity-0 -translate-x-1/2 -translate-y-1/2" />
+        <BiSearch className=" cursor-pointer absolute top-1/2 left-1/2 text-white  text-3xl opacity-0 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-95 transition-all" />
       </div>
 
       <p className="text-white text-sm flex-1   line-clamp my-2">{gameData.Summary}</p>
