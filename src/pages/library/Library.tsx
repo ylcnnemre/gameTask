@@ -1,5 +1,5 @@
 import { Context } from "App";
-import MainLayout from "components/MainLayout";
+import MainLayout from "Layouts/MainLayout";
 import React, { useCallback, useContext, useEffect } from "react";
 import { IContextType } from "App";
 import FilterMenu from "components/FilterMenu/FilterMenu";

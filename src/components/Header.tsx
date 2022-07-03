@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useParams, useRoutes } from "react-router-dom";
 import { BiWorld } from "react-icons/bi";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
@@ -8,13 +8,7 @@ import { Context, IContextType } from "App";
 import { useTranslation } from 'react-i18next'
 import i18n from "i18next"
 import "./header.scss"
-import { dbGame } from "data";
-
-
-
-
-
-
+import { AiOutlineBars } from "react-icons/ai";
 
 
 
@@ -23,7 +17,8 @@ import { dbGame } from "data";
 const Header = () => {
   const {t} =useTranslation()
 
-  
+  const [selectedLanguage, setSelectedLanguage] = useState<string>();
+
 const headerLinks: Array<{ name: any; path: string }> = [
   {
     name: t("market"),
@@ -33,10 +28,6 @@ const headerLinks: Array<{ name: any; path: string }> = [
     name: t("library"),
     path: "/library",
   },
-/*   {
-    name: "Hakkımızda",
-    path: "/about",
-  }, */
 ];
 
 
@@ -55,9 +46,22 @@ const headerLinks: Array<{ name: any; path: string }> = [
   }
 
 
+
+  const setLangueage=(lang:string)=>{
+
+      i18n.changeLanguage(lang)
+
+      setSelectedLanguage(lang)
+
+      localStorage.setItem("language",lang)
+  }
+
+
+
+
   const menu = (
     <Menu style={{padding:"0 10px"}}
-      onClick={({key})=>i18n.changeLanguage(key) }
+      onClick={({key})=>{setLangueage(key) } }
       items={[
         {
           label: "En",
@@ -70,6 +74,14 @@ const headerLinks: Array<{ name: any; path: string }> = [
       ]}
     />
   );
+
+
+
+  useEffect(()=>{
+    const lang:any=localStorage.getItem("language")==null ? "en" : localStorage.getItem("language")
+    setSelectedLanguage(lang)
+  },[])
+
 
 
 
@@ -104,9 +116,11 @@ const headerLinks: Array<{ name: any; path: string }> = [
               onClick={(e) => e.preventDefault()}
               className="dropdown_link"
             >
-              <BiWorld size={"25"} />
+              <BiWorld size={"25"} /> <span>{selectedLanguage}</span>
             </a>
           </Dropdown>
+           
+          <AiOutlineBars   className="bars_icon" />
         </div>
 
         {auth ? (

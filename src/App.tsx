@@ -24,7 +24,6 @@ import { translationEn, translationTr } from "data/language";
 
 
 export interface IContextType {
-  lang: TlangProps;
   allGames: Array<IdbGame>;
   setAllGames: Function;
   myLibrary: Array<IdbGame>;
@@ -33,16 +32,20 @@ export interface IContextType {
   setAuth: Function;
   favoriteGames: Array<IdbGame>;
   setFavoriteGames: Function;
+  selectedLanguage: string;
+  setSelectedLanguage  : Function;
 }
 
+
+const lang : any=localStorage.getItem("language") == null ? "en" : localStorage.getItem("language")
 
 i18n.use(initReactI18next).init({
   resources : {
     en : {translation:translationEn},
     tr:  {translation : translationTr}
   },
-  lng : "en",
-  fallbackLng : "en",
+  lng : lang,
+  fallbackLng : lang,
   interpolation : {escapeValue : false}
 })
 
@@ -53,12 +56,12 @@ i18n.use(initReactI18next).init({
 export const Context: any = createContext("");
 
 const App: FC = () => {
-  const [lang, setLang] = useState<TlangProps>(langs.tr);
+
   const [allGames, setAllGames] = useState<Array<IdbGame>>();
   const [myLibrary, setMyLibrary] = useState<Array<IdbGame>>([]);
   const [favoriteGames, setFavoriteGames] = useState<Array<IdbGame>>([]);
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("tr");
   const [auth, setAuth] = useState<boolean>(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<string>();
 
   useEffect(() => {
     let storageAuth: any = localStorage.getItem("auth");
@@ -115,7 +118,6 @@ const App: FC = () => {
   return (
     <Context.Provider
       value={{
-        lang,
         allGames,
         setAllGames,
         auth,
@@ -124,6 +126,8 @@ const App: FC = () => {
         setMyLibrary,
         favoriteGames,
         setFavoriteGames,
+        selectedLanguage,
+        setSelectedLanguage
       }}
     >
       <Router>

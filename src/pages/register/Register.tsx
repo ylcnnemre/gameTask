@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Button, Input,Tooltip } from "antd";
 import { Link, useNavigate } from "react-router-dom";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { AiFillHome, AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import {BiError} from "react-icons/bi"
 import { ToastContainer, toast } from "react-toastify";
 import { Context } from "App";
@@ -122,7 +122,10 @@ const Register = () => {
  const {t} =useTranslation()
 
 return (
-    <section className="register">
+
+
+      <section className="register">
+      <AiFillHome className="home_icon"  />
       <div className="register_container">
         <div className="register_wrapper">
           <h2 className="register_title">
@@ -232,6 +235,7 @@ return (
       </div>
       {/*    <ToastContainer autoClose={1000} /> */}
     </section>
+  
   );
 };
 

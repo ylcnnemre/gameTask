@@ -29,6 +29,11 @@
          margin-left: 1rem;
 
 
+         @media screen and (max-width:576px) {
+                display: none;
+         }
+
+
         .header_link_item {
              display: flex;
              align-items: center;
@@ -87,8 +92,8 @@
         .dropdown_container{
             padding: 0 1.5rem;
             height: 100%;
-
-
+            display: flex;
+            align-items: center;
             .dropdown{
                 display: flex;
                 height: 100%;
@@ -97,20 +102,35 @@
 
                 &_link{
                     color: $header-button-color;
-                    
+                    display: flex;
+                    align-items: center;
 
 
                     &:hover{
                         color: white;
                     }
 
+                   span{
+                     margin-left: .4rem;
+                     font-size: 1rem;
+                     text-transform: capitalize;
+                   }
 
                 }
                 
 
             }
 
+            .bars_icon{
+                display: none;
+                color: white;
+                font-size: 25px;
+                margin-left: 25px;
 
+                @media screen and (max-width:576px) {
+                    display: block;
+                }
+            }
         }
 
 
@@ -118,6 +138,12 @@
             display: flex;
             align-items: center;
             height: 100%;
+
+
+             @media screen  and (max-width:576px)  {
+                display: none;
+             }
+
 
         
             .login_button{
@@ -180,6 +206,11 @@
     &:hover{
         color: white;
         opacity: .8;
+    }
+
+
+    @media screen and (max-width:576px)   {
+        display: none;
     }
 
 }

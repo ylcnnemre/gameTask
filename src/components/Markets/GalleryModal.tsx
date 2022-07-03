@@ -2,9 +2,9 @@ import { Button, Modal } from "antd";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import {MdArrowBackIosNew,MdArrowForwardIos} from "react-icons/md"
-
-const GalleryModal = ({ images }: any) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+import "./galleryModal.scss"
+const GalleryModal = ({ images , isModalVisible, setIsModalVisible }: any) => {
+ /*  const [isModalVisible, setIsModalVisible] = useState(false); */
   const [swiperMove, setSwiperMove] = useState<any>({});
 
   const showModal = () => {
@@ -46,9 +46,9 @@ const GalleryModal = ({ images }: any) => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
+      {/* <Button type="primary" onClick={showModal}>
         Open Modal
-      </Button>
+      </Button> */}
       <Modal
         title="Gallery"
         visible={isModalVisible}
@@ -63,9 +63,9 @@ const GalleryModal = ({ images }: any) => {
                 images.map((val:any,i:any)=>{
 
                     return (
-                    <SwiperSlide className="w-full flex justify-between items-center"  >
+                    <SwiperSlide className="swiper_slide"  >
                         <MdArrowBackIosNew size={30} cursor="pointer" onClick={() =>{slidePrevImage()} } />
-                        <img src={val} className="w-1/2" alt="" />
+                        <img src={val}  alt="" />
                         <MdArrowForwardIos size={30} cursor="pointer" onClick={()=>slideNextImage()} />
                       </SwiperSlide>
                     )

@@ -9,6 +9,7 @@ import { FaHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./gamecard.scss"
 import { useTranslation } from "react-i18next";
+import GalleryModal from "components/Markets/GalleryModal";
 
 const GameCard = ({
   gameData,
@@ -27,6 +28,8 @@ const GameCard = ({
     useContext(Context);
 
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+  const [galleryModalVisible,setGalleryModalVisible]=useState<boolean>(false)
+
 
   const addMyLibrary = (): void => {
    
@@ -85,8 +88,8 @@ const GameCard = ({
 
   return (
 
-    
-
+    <>
+      
     <div className="gamecard_section">
       <div className="card_name_wrapper">
         <p className="card_name">
@@ -94,7 +97,7 @@ const GameCard = ({
         </p>
       </div>
 
-      <div className="card_img_wrapper">
+      <div className="card_img_wrapper" onClick={()=>setGalleryModalVisible(true)} >
         <img
           src={gameData.Cover}
           alt=""
@@ -149,6 +152,14 @@ const GameCard = ({
         confirmFunction={addMyLibrary}
       />
     </div>
+    
+
+
+    <GalleryModal  isModalVisible={galleryModalVisible} setIsModalVisible={setGalleryModalVisible}  images={gameData.Screenshots}    />
+
+    </>
+    
+
   );
 };
 

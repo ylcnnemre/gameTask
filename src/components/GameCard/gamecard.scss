@@ -6,10 +6,10 @@
      background-color: $header_bg;
      padding: .75rem;
      border-radius: .5rem;
-
+    overflow: hidden;
     .card_name_wrapper {
         display: flex;
-
+        
       .card_name{
         color: white;
         font-weight: bold;
@@ -17,10 +17,22 @@
         white-space: nowrap;
         overflow: hidden;
         margin-bottom: .5rem;
+
+
+        @media screen and (max-width:1024px) {
+            font-size: .8rem;
+        }
+
+
+        @media screen and (max-width:576px) {
+            font-size: .7rem;
+        }
+
       }
     }
 
     .card_img_wrapper{
+        cursor: pointer;
         position: relative;
         transition: 500ms all;
         
@@ -64,14 +76,31 @@
         line-height: 1.25rem;
         flex: 1 1 0%;
         margin: .5rem 0;
+
+
+        @media screen and (max-width:1024px)  {
+            font-size: .7rem;
+    }
+
+        @media screen and (max-width:576px)  {
+                font-size: .6rem;
+        }
+
     }
 
     .card_info_container{
         display: flex;
         width: 100%;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
         margin-top: .75rem;
+
+
+        @media screen and (max-width:576px) {
+            align-items: center;
+            margin-top: .3rem;
+        }
+
 
 
         .date_box{
@@ -81,6 +110,19 @@
             color: white;
             font-size: .875rem;
             line-height: 1.25rem;
+
+
+            @media screen  and (max-width:1024px)  {
+                    font-size: .6rem;
+                    padding: .4rem;
+            }
+
+            
+            @media screen  and (max-width:576px) {
+                font-size: .5rem;
+                padding: .2rem;
+            }
+
         }
 
 
@@ -97,16 +139,49 @@
                 margin-right: .5rem;
                 color: #DC2626;
 
+                @media screen  and (max-width:576px) {
+                    margin-right: .2rem;
+                }
             }
             
+
+            @media screen  and (max-width:1024px)  {
+                font-size: 1.1rem;
+              
+            }
+
+
+            @media screen  and (max-width:576px) {
+                font-size: .8rem;
+            }
+
+
         }
 
         .price{
             background-color:rgba(51 ,65 ,85,.9) ;
-            padding: .5rem ;
+            padding: .5rem .8rem ;
             border-radius: .375rem;
             color: white;
+
+
+            @media screen  and (max-width:1024px)  {
+                font-size: .8rem;
+              
+            }
+
+
+            @media screen and (max-width:576px) {
+                padding: .2rem;
+                font-size: .8rem;
+            }
+
         }
+
+
+
+
+       
 
 
 
@@ -129,9 +204,18 @@
             width: 100%;
             padding: 5px 0 ;
             transition: 200ms all;
-
+            margin: 0;
             &:hover{
                 opacity: .70;
+            }
+
+            @media screen and (max-width:1024px)  {
+                padding: 3px;
+            }
+
+
+            @media screen and (max-width:576px)  {
+                padding: 3px;
             }
 
         }

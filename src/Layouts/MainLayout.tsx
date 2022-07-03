@@ -1,11 +1,15 @@
 import React from 'react'
 import {Header} from "components"
+import "./mainLayout.scss"
+
 const MainLayout = ({children}:any) => {
+
+
   return (
-    <div className='flex flex-col'>
+    <div className='layout_container'>
             <Header/>
-            <div className='bg-main-bg-color min-h-screen    '>
-                <div className='w-5/6 mx-auto'>
+            <div className='layout_children_wrapper'>
+                <div className='children'>
                     {
                         children
                     }

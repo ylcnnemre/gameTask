@@ -1,4 +1,4 @@
-import MainLayout from "components/MainLayout";
+import MainLayout from "Layouts/MainLayout";
 import React, { useContext, useEffect, useState } from "react";
 import { dbGame, IdbGame } from "data";
 import {Select } from "antd";
