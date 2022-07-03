@@ -4,6 +4,8 @@ import "swiper/css";
 import { dbGame, IdbGame } from "data";
 import { SwiperCard } from "components";
 import {BsFillArrowLeftCircleFill,BsFillArrowDownRightCircleFill, BsFillArrowRightCircleFill} from "react-icons/bs"
+import "./swiperItem.scss"
+
 const SwiperItem = () => {
   const [sortedGame, setSortedGame] = useState<Array<IdbGame>>([]);
   const [swiperMove, setSwiperMove] = useState<any>({});
@@ -22,13 +24,13 @@ const SwiperItem = () => {
     },[]) 
 
   return (
-    <div className="flex flex-col">
-        <div className="flex bg-red w-full justify-end my-4">
+    <div className="swiper_container">
+        <div className="arrow_container">
              
-             <BsFillArrowLeftCircleFill onClick={() =>{swiperMove?.slidePrev();} }   size={30} className="ml-2 hover:text-white text-header-link-color transition-all cursor-pointer"  />
-             <BsFillArrowRightCircleFill onClick={() =>{swiperMove?.slideNext(); } }  size={30} className="ml-2 hover:text-white text-header-link-color transition-all cursor-pointer " /> 
+             <BsFillArrowLeftCircleFill onClick={() =>{swiperMove?.slidePrev();} }   size={30} className="arrow"  />
+             <BsFillArrowRightCircleFill onClick={() =>{swiperMove?.slideNext(); } }  size={30} className="arrow" /> 
         </div>
-      <div className="flex">
+      <div className="swiper_card_wrapper">
         <Swiper spaceBetween={20} slidesPerView={5} onInit={(ev) => {
             setSwiperMove(ev)
     }}> 

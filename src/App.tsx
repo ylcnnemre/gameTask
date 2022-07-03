@@ -5,17 +5,12 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { Home } from "components";
-import { dbGame, IdbGame, langs, TlangProps } from "data";
-import Markets from "pages/market/Markets";
-import Login from "pages/login/Login";
+
+import { dbGame, IdbGame} from "data";
+import {Home,Library,Login,Markets,Register} from "pages"
 import "react-toastify/dist/ReactToastify.css";
-import Register from "pages/register/Register";
-import Test from "pages/Test";
-import Library from "pages/library/Library";
 import { Spin } from "antd";
 import "./styles/App.scss"
-
 import { LoadingOutlined } from "@ant-design/icons";
 import {initReactI18next,useTranslation} from "react-i18next"
 import i18n from "i18next"
@@ -139,7 +134,6 @@ const App: FC = () => {
             element={auth ? <Navigate to={"/library"} replace /> : <Login />}
           />
           <Route path="/register" element={<Register />} />
-          <Route path="/test" element={<Test />} />
           <Route
             path="/library"
             element={<Library />}

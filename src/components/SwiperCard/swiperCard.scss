@@ -1,0 +1,43 @@
+@import "../../styles/Variable.scss";
+
+.swiper_card{
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+
+
+    .card_name{
+        color: white;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: .5rem 0;
+        font-weight: 600;
+    }
+
+
+    .info_container{
+        display: flex;
+        align-items: center;
+
+
+        .discount{
+            color: white;
+            background-color: $after-color;
+            padding: 0 .5rem;
+            border-radius: .375rem;
+        }
+
+        .old_price{
+            color: white;
+            text-decoration-line: line-through;
+            margin: 0 .75rem;
+        }
+        .new_price{
+            font-weight: 600;
+            color: white;
+        }
+
+    }
+
+}

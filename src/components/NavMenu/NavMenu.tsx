@@ -1,4 +1,5 @@
 
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import "./navMenu.scss"
 
@@ -6,6 +7,7 @@ import "./navMenu.scss"
 
 const NavMenu = () => {
 
+  const {t} =useTranslation()
   return (
     <div className="nav_menu_container">
       <div className="nav_menu_wrapper">
@@ -14,24 +16,30 @@ const NavMenu = () => {
             to={"/home"}
             className="nav_link"
           >
-            Keşfet
+            {
+              t("discover")
+            }
           </Link>
           <Link
             to={"/home"}
             className="nav_link"
           >
-            Göz At
+             {t("browse")}
           </Link>
           <Link
             to={"/home"}
             className="nav_link"
           >
-            Haberler
+              {t("news")}
           </Link>
         </div>
       </div>
 
-      <p className="trends">Trends</p>
+      <p className="trends">
+        {
+          t("trends")
+        }
+      </p>
     </div>
   );
 };

@@ -1,9 +1,7 @@
 import MainLayout from "Layouts/MainLayout";
 import React, { useContext, useEffect, useState } from "react";
 import { dbGame, IdbGame } from "data";
-import {Select } from "antd";
 import FilterMenu from "components/FilterMenu/FilterMenu";
-
 import GameCard from "components/GameCard/GameCard";
 import { Context, IContextType } from "App";
 import "./market.scss"
@@ -39,14 +37,6 @@ const Markets = () => {
       }
 
   },[auth])
-
-/*   useEffect(()=>{
-
-    const baseLibrary=allGames.filter((val,i)=> myLibrary.filter(el => el.Id === val.Id ).length > 0 )
-     console.log("base libraryy ==> ",baseLibrary)
-    localStorage.setItem("library", JSON.stringify(baseLibrary));
-  },[])
- */
   
 
   return (
@@ -69,3 +59,6 @@ const Markets = () => {
 };
 
 export default Markets;
+export {
+  Markets
+}

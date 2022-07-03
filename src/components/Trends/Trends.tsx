@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import { dbGame, IdbGame } from 'data'
 import {TrendGameCard} from "components"
+import "./trends.scss"
+
 const Trends = () => {
     
   const [trendGames,setTrendGames] = useState<Array<IdbGame>>([])
@@ -19,8 +21,8 @@ const Trends = () => {
      sortedMovie()
   })
   return (
-    <section className='w-full grid grid-cols-7 gap-4 '>
-        <div className=' col-span-5 '>
+    <section className='trends_container'>
+        <div className='game_card_wrapper'>
 
              {
                 trendGames.map((el,i)=>{
@@ -34,14 +36,14 @@ const Trends = () => {
              }
 
         </div>
-        <div className=' col-span-2 '>
-            <div className='flex flex-col h-full justify-evenly '>
+        <div className='game_cards_infos '>
+            <div className='info_wrapper'>
                     {
                         dbGame.map((item,i) =>{
                            return  i < 5 && (
-                                <div className='w-full flex items-center px-3 py-3  my-1 rounded-3xl hover:bg-header-bg'>
-                                    <img src={item.Cover} alt="" className='rounded-2xl'/> 
-                                     <span className='text-white ml-4 text-[16px]'>
+                                <div className='image_container'>
+                                    <img src={item.Cover} alt="gameimg"/> 
+                                     <span>
                                          {
                                             item.Name
                                          }

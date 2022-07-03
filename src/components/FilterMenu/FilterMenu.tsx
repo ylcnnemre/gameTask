@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import {IdbGame } from "data";
 import { Input, Menu, Dropdown, Space, Select } from "antd";
-import { useContext } from "react";
 import { Context, IContextType } from "App";
 import "./filtermenu.scss"
-import i18n from "i18next"
 import { useTranslation } from "react-i18next";
 
 const FilterMenu = ({ setGames, games }: {setGames:Function,games:Array<IdbGame>}) => {

@@ -163,3 +163,6 @@ const Library = () => {
 };
 
 export default Library;
+export {
+  Library
+}

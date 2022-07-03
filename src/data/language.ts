@@ -33,7 +33,13 @@ export const  translationEn= {
     "uppercaseLetter" : "At least 1 uppercase character",
     "lowercaseLetter" : "At least 1 lowercase character",
     "length" : "At least 3 character",
-    "notlogin" : "you are not logged"
+    "notlogin" : "you are not logged",
+    "discover" : "Discover",
+    "browse" : "Browse",
+    "news" : "News",
+    "trends" : "Trends",
+    "addrequest" : "Add Request List",
+    "learninfo" : "Learn More"
 }
 
 
@@ -70,5 +76,11 @@ export const translationTr={
   "uppercaseLetter" : "En az 1 büyük karakter",
   "lowercaseLetter" : "En az 1 küçük karakter",
   "length" : "En az 3 karakter",
-  "notlogin" : "Henüz giriş yapmadınız"
+  "notlogin" : "Henüz giriş yapmadınız",
+  "discover" : "Keşfet",
+  "browse" : "Göz At",
+  "news" : "Haberler",
+  "trends" : "Trendler",
+  "addrequest" : "İstek Listesine Ekle",
+  "learninfo" : "Daha Fazla Bilgi al"
 }

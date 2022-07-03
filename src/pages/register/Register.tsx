@@ -290,3 +290,6 @@ return (
 };
 
 export default Register;
+export {
+  Register
+}

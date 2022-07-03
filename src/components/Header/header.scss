@@ -1,4 +1,4 @@
-@import "../styles/Variable.scss";
+@import "../../styles/Variable.scss";
 
 .header{
    background-color: $header_bg ;
@@ -213,4 +213,8 @@
         display: none;
     }
 
+}
+
+.after_cl{
+    color: #1890ff !important;
 }

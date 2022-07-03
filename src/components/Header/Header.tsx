@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation, useParams, useRoutes } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams, useRoutes } from "react-router-dom";
 import { BiWorld } from "react-icons/bi";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Menu, Space } from "antd";
@@ -17,6 +17,7 @@ import { AiOutlineBars } from "react-icons/ai";
 const Header = () => {
   const {t} =useTranslation()
 
+  const navigate=useNavigate()
 
 
 const headerLinks: Array<{ name: any; path: string }> = [
@@ -88,14 +89,14 @@ const headerLinks: Array<{ name: any; path: string }> = [
   return (
     <header className="header">
       <div className="header_link_container">
-        <h1 className="logo"  >PTGAMES</h1>
+        <h1 className="logo" onClick={()=>navigate("/")}  >PTGAMES</h1>
         <ul className="header_links_wrapper">
           {headerLinks.map((item, i) => {
             return (
               <li key={String(i)} className="header_link_item">
                 <Link
                   to={item.path}
-                  className={`header_link_item_1 ${pathname===item.path && "!text-blue-600" } `}
+                  className={`header_link_item_1 ${pathname===item.path && "text-blue-600" } `}
                 >
                   {item.name}
                 </Link>

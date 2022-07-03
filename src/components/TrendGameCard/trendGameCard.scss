@@ -7,6 +7,13 @@
     background-color: $header_bg;
     border-radius: 1.5rem;
     margin: 1.25rem 0;
+    overflow: hidden;
+
+
+    @media screen  and (max-width:576px)  {
+         height: 100px;
+    }
+
 
 
     .game_card_img{
@@ -25,6 +32,9 @@
         justify-content: space-between;
 
 
+        @media screen  and (max-width:576px)  {
+            padding: .70rem;;
+       }
 
 
         .infos{
@@ -34,19 +44,99 @@
             align-items: center;
 
 
-
             .game_name{
                 color: white;
                 background-color: rgb(71,85, 105,.9);
                 font-size: 1.25rem;
                 line-height: 1.75rem;
-                
+                padding: 0 1rem;
+                border-radius: .5rem;
+
+
+                @media screen  and (max-width:576px)  {
+                    font-size: .5rem;
+               }
+            }
+
+            .game_price{
+                color: white;
+                background-color: rgb(51,65, 85,.9);
+                padding: 0 1.25rem;
+                border-radius: .15rem;
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+
+
+                @media screen  and (max-width:576px)  {
+                    font-size: .8rem;
+               }
+            }
+
+        }
+
+    
+        .card_button_container{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+
+            .request_list{
+                color: black;
+                display: flex;
+                align-items: center;
+                background-color: white;
+                border-radius: .5rem;
+                transition: 200ms all;
+                padding: .75rem;
+                &:hover{
+                    background-color: black;
+                    color: white;
+                }
+
+                span{
+                    margin-left: .5rem;
+                    font-weight: 600;
+                }
+
+
+                @media screen  and (max-width:576px)  {
+                    padding: .25rem;
+                    font-size: .5rem;
+               }
+
+            }
+
+
+            .learn_more{
+                color: black;
+                display: flex;
+                align-items: center;
+                padding: .75rem;
+                background-color: white;
+                border-radius: .5rem;
+                transition: 200ms all;
+                padding: .75rem;
+                text-align: center;
+                &:hover{
+                    background-color: black;
+                    color: white;
+                }
+
+                span{
+                    margin-left: .5rem;
+                    font-weight: 600;
+                }
+
+                @media screen  and (max-width:576px)  {
+                    font-size: .5rem;
+                    padding: .5rem;
+               }
             }
 
 
         }
-
-
 
 
     }

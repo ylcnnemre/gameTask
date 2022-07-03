@@ -1,0 +1,70 @@
+@import "../../styles/Variable.scss";
+
+.trends_container{
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 1rem;
+
+
+    @media screen and (max-width:576px) {
+        
+    }
+
+    .game_card_wrapper{
+        grid-column: span 5 / span 5;
+
+        @media screen and (max-width:576px)  {
+            grid-column: 1 / span 7;
+        }
+    }
+
+    .game_cards_infos{
+        grid-column: span 2 / span 2;
+
+        @media screen and (max-width:576px)  {
+            display: none;
+        }
+
+        .info_wrapper{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-evenly;
+
+
+
+
+            .image_container{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding: .75rem;
+                margin-top: .25rem;
+                border-radius: 1.5rem;
+
+                &:hover{
+                    background-color: $header_bg;
+                }
+
+                img{
+                    border-radius: 1rem;
+                }
+
+                span{
+                    color: white;
+                    margin-left: 1rem;
+                    font-size: 16px;
+                }
+            }
+
+
+
+        }
+
+    }
+
+
+
+}
