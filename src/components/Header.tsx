@@ -1,47 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useLocation, useParams, useRoutes } from "react-router-dom";
 import { BiWorld } from "react-icons/bi";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Menu, Space } from "antd";
 import { ImUser } from "react-icons/im";
 import { Context, IContextType } from "App";
+import { useTranslation } from 'react-i18next'
+import i18n from "i18next"
 import "./header.scss"
+import { dbGame } from "data";
 
 
-const headerLinks: Array<{ name: string; path: string }> = [
-  {
-    name: "Market",
-    path: "/market",
-  },
-  {
-    name: "Library",
-    path: "/library",
-  },
-  {
-    name: "Hakkımızda",
-    path: "/about",
-  },
-];
 
-
-const menu = (
-  <Menu
-    items={[
-      {
-        label: "1st menu item",
-        key: "1",
-      },
-      {
-        label: "2nd menu item",
-        key: "2",
-      },
-      {
-        label: "3rd menu item",
-        key: "3",
-      },
-    ]}
-  />
-);
 
 
 
@@ -51,8 +21,56 @@ const menu = (
 
 
 const Header = () => {
-  const { auth,setAuth }: IContextType = useContext(Context);
+  const {t} =useTranslation()
+
+  
+const headerLinks: Array<{ name: any; path: string }> = [
+  {
+    name: t("market"),
+    path: "/market",
+  },
+  {
+    name: t("library"),
+    path: "/library",
+  },
+/*   {
+    name: "Hakkımızda",
+    path: "/about",
+  }, */
+];
+
+
+
+
+  const { auth,setAuth,setAllGames }: IContextType = useContext(Context);
   const  {pathname}= useLocation()
+
+
+
+  const logOut=()=>{
+
+      setAuth(false)
+      localStorage.removeItem("auth")
+
+  }
+
+
+  const menu = (
+    <Menu style={{padding:"0 10px"}}
+      onClick={({key})=>i18n.changeLanguage(key) }
+      items={[
+        {
+          label: "En",
+          key: "en",
+        },
+        {
+          label: "Tr",
+          key: "tr",
+        }
+      ]}
+    />
+  );
+
 
 
   return (
@@ -80,6 +98,7 @@ const Header = () => {
             overlay={menu}
             className="dropdown"
             placement="bottomCenter"
+            
           >
             <a
               onClick={(e) => e.preventDefault()}
@@ -94,10 +113,10 @@ const Header = () => {
            <Link
            to={""}
            className="logout_button"
-           onClick={()=>setAuth(false)}
+           onClick={()=>logOut()}
          >
 
-          Logout
+           {t("logout")}
          </Link>
         ) : (
           <div className="buttons_container">
@@ -106,13 +125,13 @@ const Header = () => {
               className="login_button"
             >
               <ImUser size={"20"} />
-              <span className="login_button_span">Login</span>
+              <span className="login_button_span">{t("login")}</span>
             </Link>
             <Link
               to={"/register"}
               className="register_button"
             >
-             Register
+              {t("register")}
             </Link>
           </div>
         )}

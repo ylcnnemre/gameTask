@@ -42,7 +42,7 @@
 
         .category_button{
              min-width: 150px;
-            max-height: 35px;
+            max-height: 33px;
             max-width: 300px;
             overflow-y: hidden;
             overflow-x: auto;
@@ -51,6 +51,10 @@
             background-color: white;
             margin-left: 1rem;
 
+            
+            .ant-select-selection-item{
+                
+            }
         }
 
 

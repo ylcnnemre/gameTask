@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Input,Tooltip } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import {BiError} from "react-icons/bi"
 import { ToastContainer, toast } from "react-toastify";
 import { Context } from "App";
+import "./register.scss"
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
    const router=useNavigate()
@@ -115,27 +117,35 @@ const Register = () => {
         router("/login")
   }
 
+ const {allGames} =useContext(Context)
 
+ const {t} =useTranslation()
 
 return (
-    <section className="login-bg  w-full h-screen grid grid-cols-2   ">
-      <div className="w-full items-center  flex  justify-center h-3/4 my-auto   ">
-        <div className="h-full  flex flex-col   w-[420px]  w-full  ">
-          <h2 className="w-full text-3xl font-normal text-center  text-white ">
-            Sign Up
+    <section className="register">
+      <div className="register_container">
+        <div className="register_wrapper">
+          <h2 className="register_title">
+             {t("register")}
           </h2>
-          <div className="flex flex-col my-2">
-            <p className="font-semibold text-white my-2">Email</p>
+          <div className="email_container">
+            <p className="email_title">
+              {t("email")}
+            </p>
             <Input
               placeholder="root@gmail.com"
-              className="border-1 border-blue-600 rounded-lg"
+              className="email_input"
               onChange={({ target: { value } }) => {setEmail(value)}}
             />
           </div>
-          <div className="flex flex-col my-2">
-            <p className="font-semibold text-white my-2">Password</p>
+          <div className="password_container">
+            <p className="password_title">
+               {
+                t("password")
+               }
+            </p>
 
-            <div className="border-[1.5px] border-blue-600 rounded-lg flex bg-white items-center pr-3 " >
+            <div className="password_input_wrapper " >
               <Input
                 onChange={({ target: { value } }) => {setPassword(value)}}
                 type={"password"}
@@ -144,15 +154,17 @@ return (
               />
               {
                 !registerValidation.password ? <Tooltip placement="right" title={text}>
-                    <BiError className="text-red-500" size={20} cursor="pointer" /> 
+                    <BiError className="error_icon" size={20} cursor="pointer" /> 
               </Tooltip>  : null
               }
               
             </div>
           </div>
-          <div className="flex flex-col my-2">
-            <p className="font-semibold text-white my-2">RePassword</p>
-            <div className="border-[1.5px] border-blue-600 rounded-lg flex bg-white items-center pr-3 " >
+          <div className="password_container">
+            <p className="password_title">{
+                t("confirmpassword")
+            }</p>
+            <div className="password_input_wrapper" >
               <Input
                 onChange={({ target: { value } }) => {setRePassword(value) }  } 
                 type={"password"}
@@ -160,8 +172,8 @@ return (
                 placeholder="1234"
               />
               {
-                !registerValidation.repassword ? <Tooltip placement="right" title={<span>passwords do not match</span>}>
-                    <BiError className="text-red-500" size={20} cursor="pointer" /> 
+                !registerValidation.repassword ? <Tooltip placement="right" title={<span>{t("dontmatch")}</span>}>
+                    <BiError className="error_icon" size={20} cursor="pointer" /> 
               </Tooltip>  : null
               }
               
@@ -170,46 +182,51 @@ return (
           <Button
             onClick={() => {saveUser()}}
           disabled={Object.values(registerValidation).includes(false)}  
-            className="!bg-[#2DA44E] border-none rounded-lg hover:bg-cover transition-all !text-white mt-6   hover:bg-[#2DA44E] hover:opacity-80 hover:text-white  "
+            className="register_button"
           >
-            Register
+            {t("register")}
           </Button>
-          <p className=" w-full mt-6 p-3 border border-gray-500 text-center font-semibold text-white rounded-lg">
-            Already have an account?
-            <Link to={"/register"} className="text-blue-600 ml-2">
-              Login
+          <p className="login_link">
+              {t("alreadyacc")}
+            <Link to={"/login"} className="login_link_1">
+              {
+                t("login")
+              }
             </Link>
           </p>
         </div>
       </div>
-      <div className="w-full h-3/4 my-auto flex flex-col   border-l border-gray-400  ">
-        <div className="flex items-center justify-center">
-          <h1 className="italic text-2xl text-white font-semibold p-4 bg-header-bg w-max   rounded-2xl">
+
+      <div className="right_section_container">
+        <div className="right_section_header">
+          <h1 className="logo">
             PT
           </h1>
-           <h2 className="text-2xl text-white italic ml-6">
+           <h2 className="company_name">
               PaneraTech Games
            </h2>
         </div>
-        <p className="text-center text-header-bg  text-lg mt-12  ">
-        Join PaneraTech Games and discover thousands of games to play <Link to={"/"} className="block text-blue-600"> Learn More  </Link>
+        <p className="description ">
+          {t("desc")} <Link to={"/"} className="block text-blue-600"> {t("learnmore")}  </Link>
         </p>
-        <Button className="w-[240px] self-center rounded-lg !bg-[#2DA44E] border-none text-white hover:text-white hover:opacity-75 mt-12 ">
-             Download PtGames
+        <Button className="download_button ">
+             {t("download")}
         </Button>
-        <div className="flex flex-1 items-end justify-center ">
+        <div className="right_section_links">
 
-            <Link to={"#"} className="mx-6" >
-                Terms
+            <Link to={"#"} className="link" >
+                {t("terms")}
             </Link>
-            <Link to={"#"} className="mx-6">
-                Privact
+            <Link to={"#"} className="link">
+                {t("privacy")}
             </Link>
-            <Link to={"#"} className="mx-6">
-                Security
+            <Link to={"#"} className="link">
+                {t("security")}
             </Link>
-            <Link to={"#"} className="mx-6">
-                Contact
+            <Link to={"#"} className="link">
+                {
+                  t("contact")
+                }
             </Link>
         </div>
       </div>

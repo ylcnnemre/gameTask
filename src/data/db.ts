@@ -7,7 +7,8 @@ interface IdbGame {
    Likes : number,
    Cover : string,
    Screenshots : Array<string>,
-   Price: number
+   Price: number,
+   exist ?: boolean
 }
 export type {IdbGame}
 

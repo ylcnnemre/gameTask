@@ -17,6 +17,11 @@ import { Spin } from "antd";
 import "./styles/App.scss"
 
 import { LoadingOutlined } from "@ant-design/icons";
+import {initReactI18next,useTranslation} from "react-i18next"
+import i18n from "i18next"
+import { translationEn, translationTr } from "data/language";
+
+
 
 export interface IContextType {
   lang: TlangProps;
@@ -29,6 +34,21 @@ export interface IContextType {
   favoriteGames: Array<IdbGame>;
   setFavoriteGames: Function;
 }
+
+
+i18n.use(initReactI18next).init({
+  resources : {
+    en : {translation:translationEn},
+    tr:  {translation : translationTr}
+  },
+  lng : "en",
+  fallbackLng : "en",
+  interpolation : {escapeValue : false}
+})
+
+
+
+
 
 export const Context: any = createContext("");
 
@@ -43,12 +63,11 @@ const App: FC = () => {
   useEffect(() => {
     let storageAuth: any = localStorage.getItem("auth");
     let storageLibrary: any = localStorage.getItem("library");
-/*     let storageFavorite:any = localStorage.getItem("favorite") */
 
     if (storageAuth) {
       setAuth(true);
     }
-    if (storageLibrary && storageAuth) {
+    if (storageLibrary) {
       storageLibrary = JSON.parse(storageLibrary);
       console.log("storageLibrary ===> ", storageLibrary);
       setMyLibrary([...storageLibrary]);
@@ -85,18 +104,8 @@ const App: FC = () => {
       ]);
     }
 
-  /*  if(storageFavorite)
-   {
-     storageFavorite = JSON.parse(storageFavorite)
-    setFavoriteGames([...storageFavorite])
-   } */
-
   }, []);
 
-  const switchLang = () => {
-    setSelectedLanguage(selectedLanguage === "tr" ? "en" : "tr");
-    lang === langs.tr ? setLang(langs.en) : setLang(langs.tr);
-  };
 
   if (allGames == null) {
     const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;

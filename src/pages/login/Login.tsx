@@ -3,12 +3,16 @@ import React, { useContext, useState } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import {AiOutlineEye,AiOutlineEyeInvisible} from "react-icons/ai"
 import { ToastContainer, toast } from 'react-toastify';
-import { Context } from "App";
+import { Context, IContextType } from "App";
+import "./Login.scss"
+import { useTranslation } from "react-i18next";
+
 
 const Login = () => {
 
-  const [lang,auth,setAauth] = useContext(Context)
-
+  const {t} =useTranslation()
+  const {lang,auth,setAuth}: IContextType = useContext(Context)
+  
   const [passwordInputType,setPasswordInputType]=useState<"text"|"password">("password")
 
   const [loginValidation, setLoginValidation] = useState<{
@@ -72,15 +76,16 @@ const Login = () => {
 
  const confirmLogin=() :void =>{
 
-    let veri : any= localStorage.getItem("user")
-
-    if(veri!==null)
+    let userData : any= localStorage.getItem("user")
+    console.log("user data )> ",userData)
+    if(userData!==null)
     {
-         const StorageLoginInfo : {email:string,password:string}  =JSON.parse(veri)  
+         const StorageLoginInfo : {email:string,password:string}  =JSON.parse(userData)  
          
          if(loginInfo.email==StorageLoginInfo.email && loginInfo.password==StorageLoginInfo.password)
          {
-            setAauth(true)
+            setAuth(true)
+            localStorage.setItem("auth",JSON.stringify(true))
          }
          else{
             toast.error("Wrong passwoord or email")
@@ -95,27 +100,27 @@ const Login = () => {
 
 
   return (
-    <section className="login-bg  w-full h-screen ">
-      <div className="w-3/4 mx-auto flex justify-center h-full  py-12">
-        <div className="h-full  flex flex-col  w-[420px]  w-full ">
-          <h1 className="italic text-2xl text-white font-semibold p-4 bg-header-bg w-max mx-auto  rounded-2xl">
+    <section className="login">
+      <div className="login_container">
+        <div className="login_wrapper">
+          <h1 className="login_wrapper_logo">
             PT
           </h1>
-          <h2 className="w-max mx-auto text-2xl font-normal  mt-4 text-white ">
-            Sign in to PtGames
+          <h2 className="title">
+            {t( "signmessage" )}
           </h2>
-          <div className="flex flex-col my-2">
-            <p className="font-semibold text-white my-2">Email</p>
+          <div className="email_input_container">
+            <p className="email_input_title">{t("email")}</p>
             <Input
               placeholder="root@gmail.com"
-              className="border-1 border-blue-600 rounded-lg"
+              className="email_input"
               onChange={({ target: { value } }) => setEmail(value)}
             />
           </div>
-          <div className="flex flex-col my-2">
-            <p className="font-semibold text-white my-2">Password</p>
+          <div className="password_input_container">
+            <p className="password_input-title">{t("password")}</p>
 
-            <div className="border-[1.5px] border-blue-600 rounded-lg flex bg-white items-center pr-3 " >
+            <div className="input_wrapper" >
               <Input
                 onChange={({ target: { value } }) => setPassword(value)}
                 type={passwordInputType}
@@ -128,21 +133,26 @@ const Login = () => {
               
             </div>
 
-            <Link to={"/"} className="self-end text-[#3B9EEF] mt-1">
-              Forgot To Password
+            <Link to={"/"} className="forgot_password_link">
+              {t("fgpassword")}
             </Link>
           </div>
           <Button
+           
            onClick={()=>confirmLogin()}
             disabled={!loginValidation.email || !loginValidation.password}
-            className="!bg-[#2DA44E] border-none rounded-lg hover:bg-cover transition-all !text-white mt-6   hover:bg-[#2DA44E] hover:opacity-80 hover:text-white  "
+            className="login_button"
           >
-            Login
+            {
+              t("login")
+            }
           </Button>
-          <p className=" w-full mt-6 p-3 border border-gray-600 text-center font-semibold text-white rounded-lg">
-            New to PtGames{" "}
-            <Link to={"/register"} className="text-[#1D9BF0] ml-2">
-              Create an Account
+          <p className="register_link">
+             {t("nwptgames")}
+            <Link to={"/register"} className="register_link_1">
+              {
+                t("craccount")
+              }
             </Link>
           </p>
         </div>
