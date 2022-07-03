@@ -136,13 +136,13 @@ const App: FC = () => {
           <Route path="/market" element={<Markets />} />
           <Route
             path="/login"
-            element={auth ? <Navigate to={"/market"} replace /> : <Login />}
+            element={auth ? <Navigate to={"/library"} replace /> : <Login />}
           />
           <Route path="/register" element={<Register />} />
           <Route path="/test" element={<Test />} />
           <Route
             path="/library"
-            element={!auth ? <Navigate to={"/market"} replace /> : <Library />}
+            element={<Library />}
           />
         </Routes>
       </Router>

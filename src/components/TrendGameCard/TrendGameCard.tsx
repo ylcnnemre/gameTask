@@ -1,16 +1,16 @@
 import React from "react";
 import { BsPlusCircle } from "react-icons/bs";
-
+import "./trendGameCard.scss"
 
 const TrendGameCard = ({movieData}:any) => {
   return (
-    <div className="w-full h-[200px] flex bg-header-bg rounded-3xl my-5">
+    <div className="game_card_container">
       <img
         src={movieData.Cover}
         alt=""
-        className="h-full object-contain rounded-3xl"
+        className="game_card_img"
       />
-      <div className="w-full 0  flex flex-col p-3 justify-between  ">
+      <div className="game_info_wrapper">
         <div className="w-full flex justify-between items-center">
           <p className="text-white bg-slate-600 text-xl px-4 rounded-lg">
             {movieData.Name}

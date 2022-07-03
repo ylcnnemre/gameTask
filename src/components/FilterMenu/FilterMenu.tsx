@@ -107,15 +107,14 @@ const FilterMenu = ({ setGames, games }: {setGames:Function,games:Array<IdbGame>
              setSortedOption(e);
           }}
         >
-          <Option value={t("price")}>{t("price")}</Option>
+          <Option value={"Price"}>{t("price")}</Option>
           <Option value="Like">{t("like")}</Option>
         </Select>
 
         <Select
           mode="multiple"
           placeholder={t("categories")}
-          className="category_button  "
-          
+          className="category_button displ "
           bordered={false}
           onChange={(e:any) => {
              console.log("mulp ==> ",e)

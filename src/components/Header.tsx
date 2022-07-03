@@ -17,7 +17,7 @@ import { AiOutlineBars } from "react-icons/ai";
 const Header = () => {
   const {t} =useTranslation()
 
-  const [selectedLanguage, setSelectedLanguage] = useState<string>();
+
 
 const headerLinks: Array<{ name: any; path: string }> = [
   {
@@ -33,7 +33,7 @@ const headerLinks: Array<{ name: any; path: string }> = [
 
 
 
-  const { auth,setAuth,setAllGames }: IContextType = useContext(Context);
+  const { auth,setAuth,setAllGames ,selectedLanguage,setSelectedLanguage}: IContextType = useContext(Context);
   const  {pathname}= useLocation()
 
 

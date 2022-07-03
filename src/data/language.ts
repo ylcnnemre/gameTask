@@ -30,6 +30,10 @@ export const  translationEn= {
     "security" : "Security",
     "contact"  : "Contact",
     "alreadyacc" : "Already have an account?", 
+    "uppercaseLetter" : "At least 1 uppercase character",
+    "lowercaseLetter" : "At least 1 lowercase character",
+    "length" : "At least 3 character",
+    "notlogin" : "you are not logged"
 }
 
 
@@ -62,5 +66,9 @@ export const translationTr={
   "privacy" : "Gizlilik",
   "security" : "Güvenlik",
   "contact" :   "İletişim",
-  "alreadyacc" : "Zaten Hesabım Var"
+  "alreadyacc" : "Zaten Hesabım Var",
+  "uppercaseLetter" : "En az 1 büyük karakter",
+  "lowercaseLetter" : "En az 1 küçük karakter",
+  "length" : "En az 3 karakter",
+  "notlogin" : "Henüz giriş yapmadınız"
 }

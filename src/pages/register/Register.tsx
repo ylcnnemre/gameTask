@@ -1,15 +1,22 @@
 import React, { useContext, useState } from "react";
-import { Button, Input,Tooltip } from "antd";
-import { Link, useNavigate } from "react-router-dom";
+import { Button, Input,Tooltip,Dropdown ,Menu} from "antd";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { AiFillHome, AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import {BiError} from "react-icons/bi"
+import {BiError, BiWorld} from "react-icons/bi"
 import { ToastContainer, toast } from "react-toastify";
-import { Context } from "App";
+import { Context, IContextType } from "App";
 import "./register.scss"
+import i18n from "i18next"
 import { useTranslation } from "react-i18next";
 
 const Register = () => {
+
+  
+  const {t} =useTranslation()
+  const navigate=useNavigate()
+
    const router=useNavigate()
+   const {setSelectedLanguage,selectedLanguage} : IContextType = useContext(Context)
   const [registerValidation,setRegisterValidation]=useState<{email:boolean,password:boolean,repassword:boolean}>({
      email : false,
      password : false,
@@ -94,19 +101,47 @@ const Register = () => {
  }
 
   
-  console.log();
   
-   const text=<div>
+  const text=<div>
       <p>
-             At least 1 uppercase character
+             {t("uppercaseLetter")}
       </p>
       <p>
-            At least 1 lowercase character
+            {t("lowercaseLetter")}
       </p>
       <p>
-      At least 3 character
+          {t("length")}
       </p>
    </div>
+
+
+const setLangueage=(lang:string)=>{
+
+  i18n.changeLanguage(lang)
+
+  setSelectedLanguage(lang)
+
+  localStorage.setItem("language",lang)
+
+}
+
+
+const menu = (
+  <Menu style={{padding:"0 10px"}}
+    onClick={({key})=>{setLangueage(key) } }
+    items={[
+      {
+        label: "En",
+        key: "en",
+      },
+      {
+        label: "Tr",
+        key: "tr",
+      }
+    ]}
+  />
+);
+
 
 
   const saveUser=()=>{
@@ -117,15 +152,13 @@ const Register = () => {
         router("/login")
   }
 
- const {allGames} =useContext(Context)
 
- const {t} =useTranslation()
 
 return (
 
 
       <section className="register">
-      <AiFillHome className="home_icon"  />
+      <AiFillHome className="home_icon" onClick={()=>navigate("/market")}  />
       <div className="register_container">
         <div className="register_wrapper">
           <h2 className="register_title">
@@ -234,6 +267,23 @@ return (
         </div>
       </div>
       {/*    <ToastContainer autoClose={1000} /> */}
+
+
+      <Dropdown
+            overlay={menu}
+            className="register_lang"
+            placement="bottomCenter"
+            
+          >
+            <a
+              onClick={(e) => e.preventDefault()}
+              className="dropdown_link"
+            >
+              
+              <BiWorld size={"25"} /> <span>{selectedLanguage}</span>
+            </a>
+          </Dropdown>
+
     </section>
   
   );
