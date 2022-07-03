@@ -1,0 +1,47 @@
+@import "../../styles/Variable.scss";
+
+.library_container{
+     display: flex;
+     flex-direction: column;
+ 
+    
+     .library_wrapper{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1.5rem;
+
+      
+     }
+
+
+     .heart{
+        color: #EF4444;
+        margin-left: .5rem;
+     }
+
+     .heart_plus{
+        color: white;
+        margin-left: .5rem;
+     }
+
+
+     
+}
+
+.empty_content{
+    width: 100%;
+    color: blue ;
+    grid-column: 1/ span 4;
+    text-align: center;
+    font-size: 1.5rem;
+
+    .buy_link{
+       background-color: $after-color;
+       color: white;
+       margin-left: 1rem;
+       padding: 5px  10px;
+       border-radius: 5px;
+    }
+  /*   grid-column: span 2 / span 2; */
+ } 

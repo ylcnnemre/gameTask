@@ -1,0 +1,27 @@
+.buy_button{
+    background-color: #2DA44E;
+    padding: .5rem;
+    border-radius: .5rem;
+    color: white;
+    min-width: 70px;
+    margin: 0 .5rem;
+    transition: 300ms all;
+    &:hover{
+        opacity: .7;
+    }
+}
+
+.cancel_button{
+    background-color: #EF4444; 
+    padding: .5rem;
+    border-radius: .5rem;
+    color: white;
+    min-width: 70px;
+    margin: 0 .5rem;
+}
+
+.desc{
+    text-align: center;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}

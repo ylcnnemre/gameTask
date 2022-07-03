@@ -1,0 +1,63 @@
+@import "../../styles/Variable.scss";
+
+.filter_menu_section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+
+
+    .name_input_container{
+        color: white;
+        background-color: $header_bg;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        border-radius: 1.5rem;
+        padding: 0 1rem;
+
+       .name_input{
+            padding: .5rem ;
+            color: white;
+       }
+
+
+    }
+
+
+    .dropdown_container{
+        display: flex;
+        align-items: center;
+
+
+
+        .sort_button{
+            width: 150px;
+            color: black;
+            border-radius: 1.5rem;
+            background-color: white;
+
+        }
+
+
+        .category_button{
+             min-width: 150px;
+            max-height: 35px;
+            max-width: 300px;
+            overflow-y: hidden;
+            overflow-x: auto;
+            color: black;
+            border-radius: 1.5rem;
+            background-color: white;
+            margin-left: 1rem;
+
+        }
+
+
+    }
+
+
+
+
+
+}

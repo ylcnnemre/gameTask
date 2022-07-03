@@ -1,0 +1,161 @@
+@import "../../styles/Variable.scss";
+
+
+.login{
+    background:  $login_bg; 
+    width: 100%;
+    height: 100vh;
+
+
+    &_container{
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        padding: 3rem 0;
+
+
+
+       .login_wrapper{
+            height: 100%;
+            display: flex;
+           flex-direction: column;
+           width: 420px;
+
+
+           &_logo{
+                font-style: italic;
+                font-size: 1.5rem;
+                line-height: 2rem;
+                color: white;
+                font-weight: 600;
+                padding: 1rem;
+                background-color: $header_bg;
+                width: max-content;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 1rem;
+           }
+         
+
+
+         
+           .title{
+                width: max-content;
+                 margin-left: auto;
+                 margin-right: auto;
+                 font-size: 1.5rem;
+                 line-height: 2rem;
+                 font-weight: normal;
+                 margin-top: 1rem;
+                color: white;
+           }
+
+           .email_input_container{
+                display: flex;
+                flex-direction: column;
+                margin: .5rem 0;
+
+              .email_input_title{
+                 font-weight: 600;
+                 color: white;
+                 margin: 0.5rem 0;
+              }  
+
+              .email_input{
+                border: 1px solid $border-color;
+                border-radius: 0.5rem;
+              }
+
+
+           }
+
+           .password_input_container{
+                    display: flex;
+                    flex-direction: column;
+                    margin: .5rem 0;
+
+
+                .password_input-title{
+                    font-weight: 600;
+                    color: white;
+                    margin: .5rem 0;
+
+                }
+
+
+                .input_wrapper{
+                    border: 1.5px solid $border-color ;
+                    border-radius: .5rem;
+                    display: flex;
+                    background-color: white;
+                    align-items: center;
+                    padding-right: .75rem;
+                }
+
+                .forgot_password_link{
+                    align-self: flex-end;
+                    color: #1D9BF0;
+                    margin-top: 0.25rem;
+
+
+                    &:hover{
+
+
+                    }
+                }
+
+
+           }
+
+           
+           .login_button{
+            border: none;
+            border-radius: .5rem;
+            transition: all;
+            background-color: #2DA44E !important ;
+            color: white !important;
+            margin-top: 1.5rem;
+           
+            &:hover{
+               background-size: cover;
+               background-color: #2DA44E !important;
+               opacity: .80;
+               color: white;
+            }
+
+       }
+
+        .register_link {
+
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: .75rem;
+            border: 1px solid rgb(75,85,99,.9) ;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            border-radius: .5rem;
+
+
+
+            &_1{
+                color: #1D9BF0 ;
+                margin-left: .5rem;
+            }
+
+
+        }
+
+
+
+       } 
+
+
+    }
+
+
+
+}

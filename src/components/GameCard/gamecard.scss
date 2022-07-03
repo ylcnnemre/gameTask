@@ -1,0 +1,156 @@
+@import "../../styles/Variable.scss";
+
+.gamecard_section{
+     display: flex;
+     flex-direction: column;
+     background-color: $header_bg;
+     padding: .75rem;
+     border-radius: .5rem;
+
+    .card_name_wrapper {
+        display: flex;
+
+      .card_name{
+        color: white;
+        font-weight: bold;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-bottom: .5rem;
+      }
+    }
+
+    .card_img_wrapper{
+        position: relative;
+        transition: 500ms all;
+        
+
+        .card_img{
+            width: 100%;
+            border-radius: .5rem;
+            position: relative;
+        }
+
+
+        .search_icon{
+            cursor: pointer;
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transition: 500ms all;
+             color: white;
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+                opacity: 0;
+                transform: translate(-50%,-50%); 
+
+        }
+
+        &:hover{
+            opacity: .80;
+        }
+
+        &:hover .search_icon{
+            opacity: 1;
+        }
+
+    }
+
+
+    .card_description{
+
+        color: white;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        flex: 1 1 0%;
+        margin: .5rem 0;
+    }
+
+    .card_info_container{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: .75rem;
+
+
+        .date_box{
+            background-color:rgba(51 ,65 ,85,.9) ;
+            padding: .5rem;
+            border-radius: .375rem;
+            color: white;
+            font-size: .875rem;
+            line-height: 1.25rem;
+        }
+
+
+        .likes{
+            display: flex;
+           align-items: center ;
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+          color: white;
+          justify-content: center;
+         height: 100%;
+
+            .heart{
+                margin-right: .5rem;
+                color: #DC2626;
+
+            }
+            
+        }
+
+        .price{
+            background-color:rgba(51 ,65 ,85,.9) ;
+            padding: .5rem ;
+            border-radius: .375rem;
+            color: white;
+        }
+
+
+
+    }
+
+    .buy_button_container{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+        
+
+
+        .buy_button{
+            border-radius: .5rem;
+            color: white;
+            background-color: $after-color;
+            border: none;
+            width: 100%;
+            padding: 5px 0 ;
+            transition: 200ms all;
+
+            &:hover{
+                opacity: .70;
+            }
+
+        }
+
+
+        .exist_button{
+            border-radius: .5rem;
+            color: white;
+            background-color: #2DA44E ;
+            border: none;
+            padding: 5px 0;
+            cursor: default;
+            width: 100%;
+        }
+    }
+
+
+
+
+
+
+}

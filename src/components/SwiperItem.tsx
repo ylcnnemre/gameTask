@@ -26,7 +26,7 @@ const SwiperItem = () => {
         <div className="flex bg-red w-full justify-end my-4">
              
              <BsFillArrowLeftCircleFill onClick={() =>{swiperMove?.slidePrev();} }   size={30} className="ml-2 hover:text-white text-header-link-color transition-all cursor-pointer"  />
-             <BsFillArrowRightCircleFill onClick={() =>{swiperMove?.slideNext();} }  size={30} className="ml-2 hover:text-white text-header-link-color transition-all cursor-pointer " /> 
+             <BsFillArrowRightCircleFill onClick={() =>{swiperMove?.slideNext(); } }  size={30} className="ml-2 hover:text-white text-header-link-color transition-all cursor-pointer " /> 
         </div>
       <div className="flex">
         <Swiper spaceBetween={20} slidesPerView={5} onInit={(ev) => {
