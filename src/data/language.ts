@@ -39,7 +39,9 @@ export const  translationEn= {
     "news" : "News",
     "trends" : "Trends",
     "addrequest" : "Add Request List",
-    "learninfo" : "Learn More"
+    "learninfo" : "Learn More",
+    "removegame" : "You have successfully uninstalled the game",
+    "savegame" : "Download is Successfull"
 }
 
 
@@ -82,5 +84,7 @@ export const translationTr={
   "news" : "Haberler",
   "trends" : "Trendler",
   "addrequest" : "İstek Listesine Ekle",
-  "learninfo" : "Daha Fazla Bilgi al"
+  "learninfo" : "Daha Fazla Bilgi al",
+  "removegame" : "Oyun başarı ile kaldırıldı",
+  "savegame" : "İndirme işlemi başarılı"
 }

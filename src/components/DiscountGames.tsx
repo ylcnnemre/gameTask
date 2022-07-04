@@ -1,18 +1,13 @@
-import React from 'react'
-import {SwiperItem} from "components"
+import React from "react";
+import { SwiperItem } from "components";
 
 const DiscountGames = () => {
-
-
-
   return (
     <div>
-        <SwiperItem />
+      <SwiperItem />
     </div>
-  )
-}
+  );
+};
 
-export default DiscountGames
-export {
-    DiscountGames
-}
+export default DiscountGames;
+export { DiscountGames };

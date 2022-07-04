@@ -1,53 +1,44 @@
 @import "../../styles/Variable.scss";
 
-.nav_menu_container{
+.nav_menu_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.5rem;
+  flex-direction: row-reverse;
+  padding: 2rem 0;
+
+  .nav_menu_wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-right: 1.5rem;
     flex-direction: row-reverse;
-    padding: 2rem 0;
 
-
-    .nav_menu_wrapper{
-        display: flex;
-        align-items: center;
-        flex-direction: row-reverse;
-    
-        .nav_link_menu{
-            color: white;
-            background-color: $header_bg;
-            width: 200px;
-            display: flex;
-            align-items: center;
-            border-radius: 1.5rem;
-            padding: 0 1rem;
-
-
-        }
-
-
-        .nav_link{
-            color: $header-link-color;
-            margin: 0 1.25rem;
-
-            &:hover{
-                color: white;
-        
-            }
-        }
-        
-
-
+    .nav_link_menu {
+      color: white;
+      background-color: $header_bg;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      border-radius: 1.5rem;
+      padding: 0 1rem;
     }
 
+    .nav_link {
+      color: $header-link-color;
+      margin: 0 1.25rem;
 
-    .trends{
-        color: $header-link-color ;
-        font-size: 1.125rem;
-        line-height: 1.75rem;
-        background-color: rgba(71, 85, 105,.9) ;
-        border-radius: .5rem;
-        padding: 0 1rem;
+      &:hover {
+        color: white;
+      }
     }
+  }
+
+  .trends {
+    color: $header-link-color;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    background-color: rgba(71, 85, 105, 0.9);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+  }
 }

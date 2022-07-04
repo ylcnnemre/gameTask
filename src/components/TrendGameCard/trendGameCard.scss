@@ -1,144 +1,123 @@
 @import "../../styles/Variable.scss";
 
-.game_card_container{
-    width: 100%;
-    height: 200px;
-    display: flex;
-    background-color: $header_bg;
+.game_card_container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  background-color: $header_bg;
+  border-radius: 1.5rem;
+  margin: 1.25rem 0;
+  overflow: hidden;
+
+  @media screen and (max-width: 576px) {
+    height: 100px;
+  }
+
+  .game_card_img {
+    height: 100%;
+    object-fit: contain;
     border-radius: 1.5rem;
-    margin: 1.25rem 0;
-    overflow: hidden;
+  }
 
+  .game_info_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    justify-content: space-between;
 
-    @media screen  and (max-width:576px)  {
-         height: 100px;
+    @media screen and (max-width: 576px) {
+      padding: 0.7rem;
     }
 
+    .infos {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
+      .game_name {
+        color: white;
+        background-color: rgb(71, 85, 105, 0.9);
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        padding: 0 1rem;
+        border-radius: 0.5rem;
 
-    .game_card_img{
+        @media screen and (max-width: 576px) {
+          font-size: 0.5rem;
+        }
+      }
 
-        height: 100%;
-        object-fit: contain;
-        border-radius: 1.5rem;
+      .game_price {
+        color: white;
+        background-color: rgb(51, 65, 85, 0.9);
+        padding: 0 1.25rem;
+        border-radius: 0.15rem;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
 
+        @media screen and (max-width: 576px) {
+          font-size: 0.8rem;
+        }
+      }
     }
 
-    .game_info_wrapper{
-        width: 100%;
+    .card_button_container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .request_list {
+        color: black;
         display: flex;
-        flex-direction: column;
-        padding: .75rem;
-        justify-content: space-between;
-
-
-        @media screen  and (max-width:576px)  {
-            padding: .70rem;;
-       }
-
-
-        .infos{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-
-            .game_name{
-                color: white;
-                background-color: rgb(71,85, 105,.9);
-                font-size: 1.25rem;
-                line-height: 1.75rem;
-                padding: 0 1rem;
-                border-radius: .5rem;
-
-
-                @media screen  and (max-width:576px)  {
-                    font-size: .5rem;
-               }
-            }
-
-            .game_price{
-                color: white;
-                background-color: rgb(51,65, 85,.9);
-                padding: 0 1.25rem;
-                border-radius: .15rem;
-                font-size: 1.25rem;
-                line-height: 1.75rem;
-
-
-                @media screen  and (max-width:576px)  {
-                    font-size: .8rem;
-               }
-            }
-
+        align-items: center;
+        background-color: white;
+        border-radius: 0.5rem;
+        transition: 200ms all;
+        padding: 0.75rem;
+        &:hover {
+          background-color: black;
+          color: white;
         }
 
-    
-        .card_button_container{
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-
-            .request_list{
-                color: black;
-                display: flex;
-                align-items: center;
-                background-color: white;
-                border-radius: .5rem;
-                transition: 200ms all;
-                padding: .75rem;
-                &:hover{
-                    background-color: black;
-                    color: white;
-                }
-
-                span{
-                    margin-left: .5rem;
-                    font-weight: 600;
-                }
-
-
-                @media screen  and (max-width:576px)  {
-                    padding: .25rem;
-                    font-size: .5rem;
-               }
-
-            }
-
-
-            .learn_more{
-                color: black;
-                display: flex;
-                align-items: center;
-                padding: .75rem;
-                background-color: white;
-                border-radius: .5rem;
-                transition: 200ms all;
-                padding: .75rem;
-                text-align: center;
-                &:hover{
-                    background-color: black;
-                    color: white;
-                }
-
-                span{
-                    margin-left: .5rem;
-                    font-weight: 600;
-                }
-
-                @media screen  and (max-width:576px)  {
-                    font-size: .5rem;
-                    padding: .5rem;
-               }
-            }
-
-
+        span {
+          margin-left: 0.5rem;
+          font-weight: 600;
         }
 
+        @media screen and (max-width: 576px) {
+          padding: 0.25rem;
+          font-size: 0.5rem;
+        }
+      }
 
+      .learn_more {
+        color: black;
+        display: flex;
+        align-items: center;
+        padding: 0.75rem;
+        background-color: white;
+        border-radius: 0.5rem;
+        transition: 200ms all;
+        padding: 0.75rem;
+        text-align: center;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+
+        span {
+          margin-left: 0.5rem;
+          font-weight: 600;
+        }
+
+        @media screen and (max-width: 576px) {
+          font-size: 0.5rem;
+          padding: 0.5rem;
+        }
+      }
     }
-
+  }
 }
