@@ -1,8 +1,7 @@
 import MainLayout from "Layouts/MainLayout";
 import React, { useContext, useEffect, useState } from "react";
 import { dbGame, IdbGame } from "data";
-import FilterMenu from "components/FilterMenu/FilterMenu";
-import GameCard from "components/GameCard/GameCard";
+import {FilterMenu,GameCard} from "components"
 import { Context, IContextType } from "App";
 import "./market.scss";
 

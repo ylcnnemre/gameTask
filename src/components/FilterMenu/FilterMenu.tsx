@@ -133,3 +133,6 @@ const FilterMenu = ({ setGames, games }: {setGames:Function,games:Array<IdbGame>
 };
 
 export default FilterMenu;
+export {
+  FilterMenu
+}

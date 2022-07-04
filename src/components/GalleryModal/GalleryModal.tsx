@@ -79,3 +79,6 @@ const GalleryModal = ({ images , isModalVisible, setIsModalVisible }: any) => {
 };
 
 export default GalleryModal;
+export {
+  GalleryModal
+}

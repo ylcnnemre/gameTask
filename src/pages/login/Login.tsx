@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 const Login = () => {
   const { t } = useTranslation();
-  const { auth, setAuth }: IContextType = useContext(Context);
+  const { setAuth }: IContextType = useContext(Context);
 
   const [passwordInputType, setPasswordInputType] = useState<
     "text" | "password"

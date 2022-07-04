@@ -1,9 +1,7 @@
-import { Context } from "App";
+import { Context,IContextType } from "App";
 import MainLayout from "Layouts/MainLayout";
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { IContextType } from "App";
-import FilterMenu from "components/FilterMenu/FilterMenu";
-import GameCard from "components/GameCard/GameCard";
+import {FilterMenu,GameCard} from "components";
 import { TbHeartPlus } from "react-icons/tb";
 import { IdbGame } from "data";
 import { FaHeart } from "react-icons/fa";

@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { dbGame, IdbGame} from "data";
+import { dbGame, IdbGame,translationEn,translationTr} from "data";
 import {Home,Library,Login,Markets,Register} from "pages"
 import "react-toastify/dist/ReactToastify.css";
 import { Spin } from "antd";
@@ -14,7 +14,7 @@ import "./styles/App.scss"
 import { LoadingOutlined } from "@ant-design/icons";
 import {initReactI18next,useTranslation} from "react-i18next"
 import i18n from "i18next"
-import { translationEn, translationTr } from "data/language";
+
 
 
 
